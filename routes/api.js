@@ -1,14 +1,19 @@
 const express = require("express");
+
 const db = require("../models/index.js");
 
+const app = express();
 
-db.User.create({ name: "Expenses" })
-  .then(dbUser => {
-    console.log(dbUser);
-  })
-  .catch(({ message }) => {
-    console.log(message);
-  });
+app.post("/newexpense", (req, res) => {
+  db.User.create({ name: "Expenses" })
+    .then((dbUser) => {
+      console.log(dbUser);
+    })
+    .catch(({ message }) => {
+      console.log(message);
+    });
+})
+
 
 app.get("/dueDate", (req, res) => {
   db.Expense.find({})
@@ -51,3 +56,5 @@ app.get("/populateduser", (req, res) => {
       res.json(err);
     });
 });
+
+module.exports = app;
