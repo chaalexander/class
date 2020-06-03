@@ -5,36 +5,30 @@ const db = require("../models/index.js");
 
 const app = express();
 
-app.post("/newexpense", (req, res) => {
-  db.User.create({ name: "Expenses" })
-    .then((dbUser) => {
-      console.log(dbUser);
+app.post("/newexpense", ({ body }, res) => {
+  const newExpense = new Expense(body);
+
+  db.Expense.create(newExpense)
+    .then((result) => {
+      res.json(result);
     })
-    .catch(({ message }) => {
-      console.log(message);
+    .catch(err => {
+      res.json(err);
     });
+});
+
+app.get("/expenses", (req, res) => {
+  db.Expense.find({}).then(dbExpenses => {
+    res.json(dbExpenses)
+  }).catch(err => {
+    res.json(err);
+  });
+});
+
+
+app.delete("/expenses/:id", (req, res) => {
+  db.Expense.delete()
 })
-
-
-app.get("/dueDate", (req, res) => {
-  db.Expense.find({})
-    .then(dbExpense => {
-      res.json(dbExpense);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-app.get("/user", (req, res) => {
-  db.User.find({})
-    .then(dbUser => {
-      res.json(dbUser);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
 
 app.post("/amount", ({ body }, res) => {
   db.Expense.create(body)
