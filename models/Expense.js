@@ -8,7 +8,8 @@ const ExpenseSchema = new Schema({
         type: Date,
         min: '2020-06-02'
     },
-    amount: Number
+    amount: Number,
+    paid: Boolean
 });
 
 const Expense = mongoose.model("Expense", ExpenseSchema);
