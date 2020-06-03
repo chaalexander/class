@@ -1,0 +1,10 @@
+body,
+html {
+  background-color: wheat;
+}
+
+header {
+  text-align: center;
+  font-size: 70px;
+  color: #a52a2a;
+}
