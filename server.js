@@ -5,8 +5,9 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// const apiRoutes = require("./routes/api");
-const htmlRoutes = require('./routes/html');
+
+const apiRoutes = require("./routes/api");
+const htmlRoutes = require("./routes/html");
 
 app.use(logger('dev'));
 
@@ -15,10 +16,10 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-// app.use("/api", apiRoutes);
+app.use("/api", apiRoutes);
 app.use(htmlRoutes);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/expenses', {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/expenses", {
   useNewUrlParser: true,
 });
 

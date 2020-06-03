@@ -10,10 +10,156 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/public/assets/css/style.css"
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <h1>WELCOME</h1>
+    <header>
+      Bill Tracker
+    </header>
+
+    <aside>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Bill Name"
+              id="bill"
+            />
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Due Date"
+              id="due"
+            />
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="amount">$</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Dollar amount (with dot and two decimal places)"
+              />
+            </div>
+
+            <button type="button" class="btn btn-primary" id="addBill">
+              Add Bill
+            </button>
+            <button type="button" class="btn btn-info" id="seeAll">
+              See All
+            </button>
+          </div>
+          <div class="col-sm-6">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Bill Name</th>
+                  <th scope="col">Due Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox1"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox1"
+                        >Paid</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox2"
+                        >Delete</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox1"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox1"
+                        >Paid</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox2"
+                        >Delete</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox1"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox1"
+                        >Paid</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox2"
+                        >Delete</label
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </aside>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
