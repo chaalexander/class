@@ -8,3 +8,8 @@ header {
   font-size: 70px;
   color: #a52a2a;
 }
+
+.container {
+  margin-top: 80px;
+  margin-left: 500px;
+}
