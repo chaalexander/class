@@ -25,41 +25,21 @@ app.get("/expenses", (req, res) => {
   });
 });
 
+
 app.delete("/expenses/:id", (req, res) => {
   db.Expense.delete()
 })
 
-
-// app.get("/dueDate", (req, res) => {
-//   db.Expense.find({})
-//     .then(dbExpense => {
-//       res.json(dbExpense);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-
-// app.get("/user", (req, res) => {
-//   db.User.find({})
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-
-// app.post("/amount", ({ body }, res) => {
-//   db.Expense.create(body)
-//     .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true }))
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+app.post("/amount", ({ body }, res) => {
+  db.Expense.create(body)
+    .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { expense: _id } }, { new: true }))
+    .then(dbUser => {
+      res.json(dbUser);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
 app.get("/populateduser", (req, res) => {
   db.User.find({})

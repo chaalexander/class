@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Bill Tracker</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -20,7 +20,7 @@
     <aside>
       <div class="container">
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-3" id="add">
             <input
               class="form-control"
               type="text"
@@ -51,106 +51,31 @@
               See All
             </button>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-8" id="allbill">
             <table class="table">
               <thead class="thead-dark">
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Bill Name</th>
                   <th scope="col">Due Date</th>
                   <th scope="col">Amount</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td id="billName"></td>
+                  <td id="dueDate"></td>
+                  <td id="amount"></td>
                   <td>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox1"
-                        >Paid</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox2"
-                        >Delete</label
-                      >
-                    </div>
+                    <button type="button" class="btn btn-danger" id="paid">
+                      Pay Bill
+                    </button>
                   </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
                   <td>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox1"
-                        >Paid</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox2"
-                        >Delete</label
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox1"
-                        >Paid</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox2"
-                        >Delete</label
-                      >
-                    </div>
+                    <button type="button" class="btn btn-success" id="delete">
+                      Delete
+                    </button>
                   </td>
                 </tr>
               </tbody>
