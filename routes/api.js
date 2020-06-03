@@ -1,4 +1,3 @@
-
 const express = require("express");
 
 const db = require("../models/index.js");
@@ -12,17 +11,19 @@ app.post("/expenses", ({ body }, res) => {
     .then((result) => {
       res.json(result);
     })
-    .catch(err => {
+    .catch((err) => {
       res.json(err);
     });
 });
 
 app.get("/expenses", (req, res) => {
-  db.Expense.find({}).then(dbExpenses => {
-    res.json(dbExpenses)
-  }).catch(err => {
-    res.json(err);
-  });
+  db.Expense.find({})
+    .then((dbExpenses) => {
+      res.json(dbExpenses);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 app.delete("/expenses/:id", (req, res) => {
