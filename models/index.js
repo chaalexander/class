@@ -1,3 +1,3 @@
 module.exports = {
-    Expense: require("./Expense"),
+  Expense: require('./Expense'),
 };
