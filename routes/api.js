@@ -1,10 +1,13 @@
-const express = require("express");
 
-const db = require("../models/index.js");
+
+const express = require('express');
+
+
+const db = require('../models/index.js');
 
 const app = express();
 
-app.post("/expenses", ({ body }, res) => {
+app.post('/expenses', ({ body }, res) => {
   const newExpense = new Expense(body);
 
   db.Expense.create(newExpense)
@@ -16,17 +19,17 @@ app.post("/expenses", ({ body }, res) => {
     });
 });
 
-app.get("/expenses", (req, res) => {
-  db.Expense.find({})
-    .then((dbExpenses) => {
-      res.json(dbExpenses);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+
+app.get('/expenses', (req, res) => {
+  db.Expense.find({}).then(dbExpenses => {
+    res.json(dbExpenses);
+  }).catch(err => {
+    res.json(err);
+  });
+
 });
 
-app.delete("/expenses/:id", (req, res) => {
+app.delete('/expenses/:id', (req, res) => {
   db.Expense.findByIdAndDelete(req.params.id, (err, data) => {
     if (err) {
       res.send(err);
@@ -36,7 +39,7 @@ app.delete("/expenses/:id", (req, res) => {
   });
 });
 
-app.put("/expenses/:id", (req, res) => {
+app.put('/expenses/:id', (req, res) => {
   db.Expense.findByIdAndUpdate(
     req.params.id,
     { paid: req.body.paid },
