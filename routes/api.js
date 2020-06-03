@@ -38,7 +38,7 @@ app.get("/user", (req, res) => {
 
 app.post("/amount", ({ body }, res) => {
   db.Expense.create(body)
-    .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true }))
+    .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { expense: _id } }, { new: true }))
     .then(dbUser => {
       res.json(dbUser);
     })
